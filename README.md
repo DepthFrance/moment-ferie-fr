@@ -1,7 +1,7 @@
-moment-ferie-fr
+Moment-ferie-fr
 ===============
 
-Plug-in jours feriés en France pour Moment.js
+Plug-in [Moment.js][1] jours feriés en France 
 
 
 exemple utilisation:
@@ -37,4 +37,5 @@ exemple utilisation:
     */
   
   
-  
+
+  [1]: http://momentjs.com/
