@@ -25,7 +25,7 @@
     // http://techneilogy.blogspot.fr/2012/02/couple-of-years-ago-i-posted-source.html
 
     moment.fn.easterDay = moment.fn.paques = function (Y) {
-      if (typeof Y === undefined) {
+      if (Y === undefined) {
         Y = this.year();
       }
       var a = Y % 19;
@@ -49,7 +49,7 @@
 
 
     moment.fn.lundiDePaques = function (Y) {
-      if (typeof Y === undefined) {
+      if (Y === undefined) {
         Y = this.year();
       }
       return this.paques(Y).add("days", 1);
@@ -57,7 +57,7 @@
 
 
     moment.fn.ascension = function (Y) {
-      if (typeof Y === undefined) {
+      if (Y === undefined) {
         Y = this.year();
       }
       return this.paques(Y).add("days", 39);
@@ -65,7 +65,7 @@
 
 
     moment.fn.pentecote = function (Y) {
-      if (typeof Y === undefined) {
+      if (Y === undefined) {
         Y = this.year();
       }
       return this.paques(Y).add("days", 50);
@@ -75,28 +75,28 @@
 
 
     moment.fn.jourDeLAn = function (Y) {
-      if (typeof Y === undefined) {
+      if (Y === undefined) {
         Y = this.year();
       }
       return moment("1-1-" + Y, "DD-MM-YYYY");
     };
 
     moment.fn.feteDuTravail = function (Y) {
-      if (typeof Y === undefined) {
+      if (Y === undefined) {
         Y = this.year();
       }
       return moment("1-5-" + Y, "DD-MM-YYYY");
     };
 
     moment.fn.victoireDeAllies = function (Y) {
-      if (typeof Y === undefined) {
+      if (Y === undefined) {
         Y = this.year();
       }
       return moment("8-5-" + Y, "DD-MM-YYYY");
     };
 
     moment.fn.feteNationale = function (Y) {
-      if (typeof Y === undefined) {
+      if (Y === undefined) {
         Y = this.year();
       }
       return moment("14-7-" + Y, "DD-MM-YYYY");
@@ -104,28 +104,28 @@
 
 
     moment.fn.assomption = function (Y) {
-      if (typeof Y === undefined) {
+      if (Y === undefined) {
         Y = this.year();
       }
       return moment("15-8-" + Y, "DD-MM-YYYY");
     };
 
     moment.fn.toussaint = function (Y) {
-      if (typeof Y === undefined) {
+      if (Y === undefined) {
         Y = this.year();
       }
       return moment("1-11-" + Y, "DD-MM-YYYY");
     };
 
     moment.fn.armistice = function (Y) {
-      if (typeof Y === undefined) {
+      if (Y === undefined) {
         Y = this.year();
       }
       return moment("11-11-" + Y, "DD-MM-YYYY");
     };
 
     moment.fn.noel = function (Y) {
-      if (typeof Y === undefined) {
+      if (Y === undefined) {
         Y = this.year();
       }
       return moment("25-12-" + Y, "DD-MM-YYYY");

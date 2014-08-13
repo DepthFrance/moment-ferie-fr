@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "An extension to moment.js that handles working days in France",
   "main": "moment-ferie-fr.js",
+  "scripts": {
+    "test": "node test.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jlandure/moment-ferie-fr.git"
