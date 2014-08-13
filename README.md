@@ -1,5 +1,5 @@
-Moment-ferie-fr
-===============
+Moment-ferie-fr[![Build Status]https://travis-ci.org/jlandure/moment-ferie-fr.svg?branch=master)](https://travis-ci.org/jlandure/moment-ferie-fr)
+==================================================
 
 Plug-in [Moment.js][1] jours feriés en France 
 
