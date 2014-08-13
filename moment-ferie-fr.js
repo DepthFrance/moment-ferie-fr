@@ -3,21 +3,6 @@
 
   "use strict";
 
-  var listeFerie = {
-    jourDeLAn: "Jour de l'an",
-    feteDuTravail: "Fête du travail",
-    victoireDeAllies: "Victoire des alliés",
-    feteNationale: "Fête Nationale",
-    assomption: "Assomption",
-    toussaint: "Toussaint",
-    armistice: "Armistice",
-    noel: "Noël",
-    paques: "Pâques",
-    lundiDePaques: "Lundi de Pâques",
-    ascension: "Ascension",
-    pentecote: "Pentecôte"
-  };
-
   var initialize = function (moment) {
 
     //**********
@@ -52,7 +37,7 @@
       if (Y === undefined) {
         Y = this.year();
       }
-      return this.paques(Y).add("days", 1);
+      return this.paques(Y).add(1, "days");
     };
 
 
@@ -60,7 +45,7 @@
       if (Y === undefined) {
         Y = this.year();
       }
-      return this.paques(Y).add("days", 39);
+      return this.paques(Y).add(39, "days");
     };
 
 
@@ -68,7 +53,7 @@
       if (Y === undefined) {
         Y = this.year();
       }
-      return this.paques(Y).add("days", 50);
+      return this.paques(Y).add(50, "days");
     };
 
     //*****************
@@ -131,14 +116,28 @@
       return moment("25-12-" + Y, "DD-MM-YYYY");
     };
 
+    var listeFerie = {
+      "Jour de l'an" : moment.fn.jourDeLAn,
+      feteDuTravail: "Fête du travail",
+      victoireDeAllies: "Victoire des alliés",
+      feteNationale: "Fête Nationale",
+      assomption: "Assomption",
+      toussaint: "Toussaint",
+      armistice: "Armistice",
+      noel: "Noël",
+      paques: "Pâques",
+      lundiDePaques: "Lundi de Pâques",
+      ascension: "Ascension",
+      pentecote: "Pentecôte"
+    };
+
+
     //*****************
 
 
     moment.fn.getFerieList = function () {
       var res = [];
-      for (var index in listeFerie) {
-        res.push({name: listeFerie[index], date: eval("this." + index + "()") });
-      }
+
       return res;
     };
 
