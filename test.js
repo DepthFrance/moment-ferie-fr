@@ -39,5 +39,4 @@ var day = moment("9-6-2014", "DD-MM-YYYY");
 assert.equal(true, day.isFerie());
 assert.equal(day.getFerie(), "Pentecôte");
 
-
 process.exit(0);

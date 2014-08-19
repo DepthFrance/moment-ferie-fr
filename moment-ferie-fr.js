@@ -120,6 +120,16 @@
 
     var listeFerie = {
       "Jour de l'an": moment.fn.jourDeLAn,
+      "Fête du travail": moment.fn.feteDuTravail,
+      "Victoire des alliés": moment.fn.victoireDeAllies,
+      "Fête Nationale": moment.fn.feteNationale,
+      "Assomption": moment.fn.assomption,
+      "Toussaint": moment.fn.toussaint,
+      "Armistice": moment.fn.armistice,
+      "Noël": moment.fn.noel,
+      "Pâques": moment.fn.paques,
+      "Lundi de Pâques": moment.fn.lundiDePaques,
+      "Ascension": moment.fn.ascension,
       "Pentecôte": moment.fn.pentecote
 
     };
