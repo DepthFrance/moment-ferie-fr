@@ -3,6 +3,8 @@
 
   "use strict";
 
+  var _ = require("lodash");
+
   var initialize = function (moment) {
 
     //**********
@@ -117,18 +119,9 @@
     };
 
     var listeFerie = {
-      "Jour de l'an" : moment.fn.jourDeLAn,
-      feteDuTravail: "Fête du travail",
-      victoireDeAllies: "Victoire des alliés",
-      feteNationale: "Fête Nationale",
-      assomption: "Assomption",
-      toussaint: "Toussaint",
-      armistice: "Armistice",
-      noel: "Noël",
-      paques: "Pâques",
-      lundiDePaques: "Lundi de Pâques",
-      ascension: "Ascension",
-      pentecote: "Pentecôte"
+        "Jour de l'an": moment.fn.jourDeLAn,
+        "Pentecôte": moment.fn.pentecote
+
     };
 
 
@@ -137,35 +130,32 @@
 
     moment.fn.getFerieList = function () {
       var res = [];
-
+      _.forEach(listeFerie, function(value, key) {
+        console.log("value >"+ value.call(this));
+        res.push({name: key, date: value.call(this) });
+      }, this);
       return res;
     };
 
 
     moment.fn.getFerie = function () {
-      var f;
-      for (var index in listeFerie) {
-        f = {name: listeFerie[index], date: eval("this." + index + "()") };
-        if (this.isSame(f.date)) {
-          return f.name;
+      var f = _.reduce(listeFerie, function(result, value, key) {
+        //var evalTemp = eval("this." + value + "()");
+        if (this.isSame(value.call(this))) {
+          result.push(key);
         }
+        return result;
+      }, [], this);
+      if(f && f.length ===1) {
+        return f[0];
       }
-
       return null;
     };
 
-
     moment.fn.isFerie = function () {
-      var f;
-      for (var index in listeFerie) {
-        f = {name: listeFerie[index], date: eval("this." + index + "()") };
-        if (this.isSame(f.date)) {
-          return true;
-        }
-      }
-
-      return false;
+     return (this.getFerie() !== null);
     };
+
     return moment;
   };
 

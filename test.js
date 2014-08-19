@@ -20,15 +20,24 @@ assert.equal(y2014.toussaint().format("DD/MM/YYYY"), "01/11/2014");
 assert.equal(y2014.armistice().format("DD/MM/YYYY"), "11/11/2014");
 
 assert.equal(moment().noel(2015).format("DD/MM/YYYY"), "25/12/2015");
-assert.equal(y2014.lundiDePaques(2015).format("DD/MM/YYYY"), "06/04/2015");
-assert.equal(y2014.ascension(2015).format("DD/MM/YYYY"), "14/05/2015");
-assert.equal(y2014.pentecote(2015).format("DD/MM/YYYY"), "25/05/2015");
-assert.equal(y2014.jourDeLAn(2015).format("DD/MM/YYYY"), "01/01/2015");
-assert.equal(y2014.feteDuTravail(2015).format("DD/MM/YYYY"), "01/05/2015");
-assert.equal(y2014.victoireDeAllies(2015).format("DD/MM/YYYY"), "08/05/2015");
-assert.equal(y2014.feteNationale(2015).format("DD/MM/YYYY"), "14/07/2015");
-assert.equal(y2014.assomption(2015).format("DD/MM/YYYY"), "15/08/2015");
-assert.equal(y2014.toussaint(2015).format("DD/MM/YYYY"), "01/11/2015");
-assert.equal(y2014.armistice(2015).format("DD/MM/YYYY"), "11/11/2015");
+assert.equal(moment().lundiDePaques(2015).format("DD/MM/YYYY"), "06/04/2015");
+assert.equal(moment().ascension(2015).format("DD/MM/YYYY"), "14/05/2015");
+assert.equal(moment().pentecote(2015).format("DD/MM/YYYY"), "25/05/2015");
+assert.equal(moment().jourDeLAn(2015).format("DD/MM/YYYY"), "01/01/2015");
+assert.equal(moment().feteDuTravail(2015).format("DD/MM/YYYY"), "01/05/2015");
+assert.equal(moment().victoireDeAllies(2015).format("DD/MM/YYYY"), "08/05/2015");
+assert.equal(moment().feteNationale(2015).format("DD/MM/YYYY"), "14/07/2015");
+assert.equal(moment().assomption(2015).format("DD/MM/YYYY"), "15/08/2015");
+assert.equal(moment().toussaint(2015).format("DD/MM/YYYY"), "01/11/2015");
+assert.equal(moment().armistice(2015).format("DD/MM/YYYY"), "11/11/2015");
+
+console.log( moment("2015", "YYYY").getFerieList());
+assert.equal(moment("2015", "YYYY").getFerieList()[0].name, "Jour de l\'an");
+assert.equal(moment("2015", "YYYY").getFerieList()[0].date.format("DD/MM/YYYY"), "01/01/2015");
+
+var day = moment("9-6-2014", "DD-MM-YYYY");
+assert.equal(true, day.isFerie());
+assert.equal(day.getFerie(), "Pentecôte");
+
 
 process.exit(0);
