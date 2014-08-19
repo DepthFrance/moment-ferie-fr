@@ -31,12 +31,24 @@ assert.equal(moment().assomption(2015).format("DD/MM/YYYY"), "15/08/2015");
 assert.equal(moment().toussaint(2015).format("DD/MM/YYYY"), "01/11/2015");
 assert.equal(moment().armistice(2015).format("DD/MM/YYYY"), "11/11/2015");
 
-console.log( moment("2015", "YYYY").getFerieList());
+//console.log( moment("2015", "YYYY").getFerieList());
 assert.equal(moment("2015", "YYYY").getFerieList()[0].name, "Jour de l\'an");
 assert.equal(moment("2015", "YYYY").getFerieList()[0].date.format("DD/MM/YYYY"), "01/01/2015");
 
 var day = moment("9-6-2014", "DD-MM-YYYY");
 assert.equal(true, day.isFerie());
 assert.equal(day.getFerie(), "Pentecôte");
+
+//day : 09/06/14 is a Monday but is "ferie"
+assert.equal(false, day.isWorkingDay());
+day.subtract(2, "days");
+// now day is "saturday"
+assert.equal(false, day.isWorkingDay());
+// go to "sunday"
+day.add(1, "days");
+assert.equal(false, day.isWorkingDay());
+//return to "tuesday"
+day.add(2, "days");
+assert.equal(true, day.isWorkingDay());
 
 process.exit(0);

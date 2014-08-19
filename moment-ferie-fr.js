@@ -131,7 +131,6 @@
       "Lundi de Pâques": moment.fn.lundiDePaques,
       "Ascension": moment.fn.ascension,
       "Pentecôte": moment.fn.pentecote
-
     };
 
 
@@ -149,7 +148,6 @@
 
     moment.fn.getFerie = function () {
       var f = _.reduce(listeFerie, function (result, value, key) {
-        //var evalTemp = eval("this." + value + "()");
         if (this.isSame(value.call(this))) {
           result.push(key);
         }
@@ -164,6 +162,16 @@
     moment.fn.isFerie = function () {
       return (this.getFerie() !== null);
     };
+
+    moment.fn.isWeekEnd = function () {
+      //week start with the sunday (index == 0
+      return (this.day() === 0 || this.day() === 6);
+    };
+
+    moment.fn.isWorkingDay = function () {
+      return (!this.isWeekEnd() && !this.isFerie());
+    };
+
 
     return moment;
   };
