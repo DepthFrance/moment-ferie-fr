@@ -119,8 +119,8 @@
     };
 
     var listeFerie = {
-        "Jour de l'an": moment.fn.jourDeLAn,
-        "Pentecôte": moment.fn.pentecote
+      "Jour de l'an": moment.fn.jourDeLAn,
+      "Pentecôte": moment.fn.pentecote
 
     };
 
@@ -130,7 +130,7 @@
 
     moment.fn.getFerieList = function () {
       var res = [];
-      _.forEach(listeFerie, function(value, key) {
+      _.forEach(listeFerie, function (value, key) {
         res.push({name: key, date: value.call(this) });
       }, this);
       return res;
@@ -138,21 +138,21 @@
 
 
     moment.fn.getFerie = function () {
-      var f = _.reduce(listeFerie, function(result, value, key) {
+      var f = _.reduce(listeFerie, function (result, value, key) {
         //var evalTemp = eval("this." + value + "()");
         if (this.isSame(value.call(this))) {
           result.push(key);
         }
         return result;
       }, [], this);
-      if(f && f.length ===1) {
+      if (f && f.length === 1) {
         return f[0];
       }
       return null;
     };
 
     moment.fn.isFerie = function () {
-     return (this.getFerie() !== null);
+      return (this.getFerie() !== null);
     };
 
     return moment;
