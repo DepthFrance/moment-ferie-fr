@@ -131,7 +131,6 @@
     moment.fn.getFerieList = function () {
       var res = [];
       _.forEach(listeFerie, function(value, key) {
-        console.log("value >"+ value.call(this));
         res.push({name: key, date: value.call(this) });
       }, this);
       return res;
