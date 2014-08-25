@@ -36,6 +36,5 @@ exemple utilisation:
       day.noel();
     */
   
-  
 
   [1]: http://momentjs.com/
