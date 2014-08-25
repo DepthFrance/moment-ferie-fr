@@ -1,0 +1,38 @@
+{
+// http://www.jshint.com/docs/options/
+//
+// == Enforcing options ==
+  "bitwise": true,
+//  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "es3": false,
+  "forin": true,
+  "freeze": true,
+  "immed": true,
+//  "indent": 2,
+  //Does not work!
+  // - Problem with switch case indentation (use the style of the first token found, but could be in node_modules files in Intellij (does not happen with command line)
+  // - Problem with indentation of angular routes declaration
+  "latedef": true,
+  "newcap": false,
+  "noarg": true,
+  "noempty": true,
+  "nonew": true,
+//  "plusplus": true,
+  "quotmark": "double",
+  "undef": true,
+  "unused": "vars",
+  "strict": true,
+  "trailing": true,
+// == Relaxing options ==
+  "sub": false,
+  "esnext": false,
+// == Environments ==
+  "browser": true,
+  "node": true,
+// == Global Variables ==
+  "globals": {
+    "angular": false
+  }
+}

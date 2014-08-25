@@ -1,5 +1,5 @@
-Moment-ferie-fr
-===============
+Moment-ferie-fr  [![Build Status](https://travis-ci.org/jlandure/moment-ferie-fr.svg?branch=master)](https://travis-ci.org/jlandure/moment-ferie-fr)
+==================================================
 
 Plug-in [Moment.js][1] jours feriés en France 
 
@@ -10,7 +10,7 @@ exemple utilisation:
     var day = moment("9-6-2014", "DD-MM-YYYY");
 
     console.log( day.isFerie() );  // boolean
-    console.log( day.getFerie() ); // string, 'Penteĉote'
+    console.log( day.getFerie() ); // string, 'Pentecôte'
   
     console.log( day.getFerieList() ); // array, liste jours feriés de l'année de day
     console.log( moment().getFerieList(2018) );  // array, liste jours feriés de l'année 2018
