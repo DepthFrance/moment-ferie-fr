@@ -13,8 +13,7 @@
   "author": "jlandure",
   "homepage": "https://github.com/jlandure/moment-ferie-fr",
   "dependencies": {
-    "moment": "^2.4.0",
-    "lodash": "2.4.1"
+    "moment": "^2.4.0"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

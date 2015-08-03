@@ -3,14 +3,9 @@
 
   "use strict";
 
-  var _ = require("lodash");
-
   var initialize = function (moment) {
 
-    //**********
-
-    // http://techneilogy.blogspot.fr/2012/02/couple-of-years-ago-i-posted-source.html
-
+    // Source: http://techneilogy.blogspot.fr/2012/02/couple-of-years-ago-i-posted-source.html
     moment.fn.easterDay = moment.fn.paques = function (Y) {
       if (Y === undefined) {
         Y = this.year();
@@ -34,14 +29,12 @@
       return moment(date);
     };
 
-
     moment.fn.lundiDePaques = function (Y) {
       if (Y === undefined) {
         Y = this.year();
       }
       return this.paques(Y).add(1, "days");
     };
-
 
     moment.fn.ascension = function (Y) {
       if (Y === undefined) {
@@ -50,16 +43,12 @@
       return this.paques(Y).add(39, "days");
     };
 
-
     moment.fn.pentecote = function (Y) {
       if (Y === undefined) {
         Y = this.year();
       }
       return this.paques(Y).add(50, "days");
     };
-
-    //*****************
-
 
     moment.fn.jourDeLAn = function (Y) {
       if (Y === undefined) {
@@ -88,7 +77,6 @@
       }
       return moment("14-7-" + Y, "DD-MM-YYYY");
     };
-
 
     moment.fn.assomption = function (Y) {
       if (Y === undefined) {
@@ -133,28 +121,23 @@
       "Pentecôte": moment.fn.pentecote
     };
 
-
-    //*****************
-
-
     moment.fn.getFerieList = function () {
       var res = [];
-      _.forEach(listeFerie, function (value, key) {
-        res.push({name: key, date: value.call(this) });
-      }, this);
+      for (var key in listeFerie) {
+        if (listeFerie.hasOwnProperty(key)) {
+          res.push({name: key, date: listeFerie[key].call(this) });
+        }
+      }
       return res;
     };
 
-
     moment.fn.getFerie = function () {
-      var f = _.reduce(listeFerie, function (result, value, key) {
-        if (this.isSame(value.call(this))) {
-          result.push(key);
+      for (var key in listeFerie) {
+        if (listeFerie.hasOwnProperty(key)) {
+          if (this.isSame(listeFerie[key].call(this))) {
+            return key;
+          }
         }
-        return result;
-      }, [], this);
-      if (f && f.length === 1) {
-        return f[0];
       }
       return null;
     };
@@ -164,14 +147,12 @@
     };
 
     moment.fn.isWeekEnd = function () {
-      //week start with the sunday (index == 0
       return (this.day() === 0 || this.day() === 6);
     };
 
     moment.fn.isWorkingDay = function () {
       return (!this.isWeekEnd() && !this.isFerie());
     };
-
 
     return moment;
   };
