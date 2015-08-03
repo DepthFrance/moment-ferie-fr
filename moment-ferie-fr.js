@@ -126,7 +126,7 @@
       "Lundi de Pâques": moment.fn.lundiDePaques,
       "Ascension": moment.fn.ascension,
       "Pentecôte": moment.fn.pentecote,
-      "Lundi de Pentecôte": moment.fn.lundiDePentecote,
+      "Lundi de Pentecôte": moment.fn.lundiDePentecote
     };
 
     moment.fn.getFerieList = function () {
