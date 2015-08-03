@@ -50,6 +50,13 @@
       return this.paques(Y).add(50, "days");
     };
 
+    moment.fn.lundiDePentecote = function (Y) {
+      if (Y === undefined) {
+        Y = this.year();
+      }
+      return this.paques(Y).add(51, "days");
+    };
+
     moment.fn.jourDeLAn = function (Y) {
       if (Y === undefined) {
         Y = this.year();
@@ -118,7 +125,8 @@
       "Pâques": moment.fn.paques,
       "Lundi de Pâques": moment.fn.lundiDePaques,
       "Ascension": moment.fn.ascension,
-      "Pentecôte": moment.fn.pentecote
+      "Pentecôte": moment.fn.pentecote,
+      "Lundi de Pentecôte": moment.fn.lundiDePentecote
     };
 
     moment.fn.getFerieList = function () {
@@ -134,7 +142,7 @@
     moment.fn.getFerie = function () {
       for (var key in listeFerie) {
         if (listeFerie.hasOwnProperty(key)) {
-          if (this.isSame(listeFerie[key].call(this))) {
+          if (this.isSame(listeFerie[key].call(this), 'day')) {
             return key;
           }
         }
