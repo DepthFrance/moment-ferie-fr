@@ -1,7 +1,7 @@
-Moment-ferie-fr  [![Build Status](https://travis-ci.org/jlandure/moment-ferie-fr.svg?branch=master)](https://travis-ci.org/jlandure/moment-ferie-fr)
+Moment-ferie-fr  [![Build Status](https://travis-ci.org/DepthFrance/moment-ferie-fr.svg?branch=master)](https://travis-ci.org/DepthFrance/moment-ferie-fr)
 ==================================================
 
-Plug-in [Moment.js][1] jours feriés en France 
+Plug-in [Moment.js][1] jours feriés en France
 
 
 exemple utilisation:
@@ -11,21 +11,21 @@ exemple utilisation:
 
     console.log( day.isFerie() );  // boolean
     console.log( day.getFerie() ); // string, 'Pentecôte'
-  
+
     console.log( day.getFerieList() ); // array, liste jours feriés de l'année de day
     console.log( moment().getFerieList(2018) );  // array, liste jours feriés de l'année 2018
-  
+
     console.log( day.lundiDePaques() ); // momentObj, jour de paques de l'année de day
     console.log( moment().lundiDePaques(2018) ); // momentObj, jour de paques de l'année 2018
-  
+
     /*
     idem pour:
-    
+
       day.paques();
       day.lundiDePaques();
       day.ascension();
       day.pentecote();
-    
+
       day.jourDeLAn();
       day.feteDuTravail();
       day.victoireDeAllies();
@@ -35,6 +35,6 @@ exemple utilisation:
       day.armistice();
       day.noel();
     */
-  
+
 
   [1]: http://momentjs.com/

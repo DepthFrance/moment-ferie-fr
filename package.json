@@ -1,22 +1,32 @@
 {
-  "name": "moment-ferie-fr",
-  "version": "0.1.1",
-  "description": "An extension to moment.js that handles working days in France",
-  "main": "moment-ferie-fr.js",
-  "scripts": {
-    "test": "node test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jlandure/moment-ferie-fr.git"
-  },
-  "author": "jlandure",
-  "homepage": "https://github.com/jlandure/moment-ferie-fr",
-  "dependencies": {
-    "moment": "^2.4.0"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-release": "~0.7.0"
-  }
+    "name": "moment-ferie-fr",
+    "version": "0.1.1",
+    "description": "An extension to moment.js that handles working days in France",
+    "main": "moment-ferie-fr.js",
+    "scripts": {
+        "test": "node test.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DepthFrance/moment-ferie-fr.git"
+    },
+    "author": "damienlabat",
+    "homepage": "https://github.com/DepthFrance/moment-ferie-fr",
+    "dependencies": {
+        "moment": "^2.4.0"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "grunt-release": "~0.7.0"
+    },
+    "bugs": {
+        "url": "https://github.com/DepthFrance/moment-ferie-fr/issues"
+    },
+    "keywords": [
+        "moment",
+        "ferie",
+        "holiday",
+        "date"
+    ],
+    "license": "ISC"
 }
