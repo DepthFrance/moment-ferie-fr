@@ -134,7 +134,7 @@
     moment.fn.getFerie = function () {
       for (var key in listeFerie) {
         if (listeFerie.hasOwnProperty(key)) {
-          if (this.isSame(listeFerie[key].call(this))) {
+          if (this.isSame(listeFerie[key].call(this), 'days')) {
             return key;
           }
         }
