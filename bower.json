@@ -1,6 +1,6 @@
 {
   "name": "moment-ferie-fr",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "https://github.com/DepthFrance/moment-ferie-fr",
   "description": "An extension to moment.js that handles working days in France",
   "main": "moment-ferie-fr.js",
